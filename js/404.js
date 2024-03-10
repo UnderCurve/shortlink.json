@@ -11,6 +11,8 @@ fetch('json/urls.json')
         if (targetObject) {
             const url = targetObject.url;
             window.location.href = url; // Redirect to the found URL
+        } else {
+            window.location.href = "/"
         }
     })
     .catch((error) => {
