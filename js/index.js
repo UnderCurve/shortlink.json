@@ -3,6 +3,8 @@ import config from '/json/settings.json' assert { type: 'json' };
 
 console.log(urls, config);
 
+document.title = `${config.settings.ghname} shortlink.json`
+
 document.addEventListener('DOMContentLoaded', async function() {
     try {
         // Load settings JSON
