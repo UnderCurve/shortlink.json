@@ -46,7 +46,9 @@ function applySettings() {
             for (const prop in pfpStyles) {
                 pfp.style[prop] = pfpStyles[prop];
             }
+            // apply GitHub username
             pfp.src = `https://avatars.githubusercontent.com/${data.settings.ghname}`;
+            document.title = `${data.settings.ghname} - shortlink.json`
 
             // Calculate font size based on screen width
             const screenWidth = window.innerWidth;
