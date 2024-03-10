@@ -1,0 +1,62 @@
+[
+    {
+        "id": "home",
+        "name": "Main Website",
+        "url": "https://undercurve.wdym.info",
+        "icon": "fa-solid fa-home"
+    },
+    {
+        "id": "yt",
+        "name": "Main YouTube Channel",
+        "url": "https://youtube.com/@UnderCurve",
+        "icon": "fa-brands fa-youtube"
+    },
+    {
+        "id": "yt2",
+        "name": "Second YouTube Channel",
+        "url": "https://youtube.com/@UnderC2",
+        "icon": "fa-brands fa-youtube"
+    },
+    {
+        "id": "gh",
+        "name": "My Github",
+        "url": "https://github.com/UnderCurve",
+        "icon": "fa-brands fa-github"
+    },
+    {
+        "id": "sc",
+        "name": "My SoundCloud",
+        "url": "https://soundcloud.com/UnderCurv3",
+        "icon": "fa-brands fa-soundcloud"
+    },
+    {
+        "id": "ttv",
+        "name": "My Twitch",
+        "url": "https://twitch.tv/UnderCurveTV",
+        "icon": "fa-brands fa-twitch"
+    },
+    {
+        "id": "disc",
+        "name": "My Discord Account",
+        "url": "https://discord.com/users/584349058236416024",
+        "icon": "fa-brands fa-discord"
+    },
+    {
+        "id": "blog",
+        "name": "My Blog",
+        "url": "https://undercurve.wdym.info/blog",
+        "icon": "fa-solid fa-rss"
+    },
+    {
+        "id": "q",
+        "name": "Quoted App",
+        "url": "https://quoted.wdym.info",
+        "icon": "fa-solid fa-quote-left"
+    },
+    {
+        "id": "project",
+        "name": "shortlink.json Project",
+        "url": "https://github.com/UnderCurve/shortlink.json",
+        "icon": "fa-solid fa-folder"
+    }
+]
