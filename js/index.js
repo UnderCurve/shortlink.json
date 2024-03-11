@@ -61,6 +61,19 @@ function applySettings() {
                 fontSize = 45;
             }
 
+            // Get Github description and write it to gh-desc line
+            fetch(`https://api.github.com/users/${data.settings.ghname}`)
+                .then(response => response.json())
+                .then(ghdata => {
+                    const ghDesc = document.getElementById('gh-desc');
+                    ghDesc.innerHTML = ghdata.bio;
+                    const DescStyles = data.styles['#gh-desc'];
+                    for (const prop in DescStyles) {
+                        ghDesc.style[prop] = DescStyles[prop];
+                    }
+                })
+
+
             // Apply button styles
             const buttons = document.getElementsByClassName('button');
             const buttonStyles = data.styles['.button'];
