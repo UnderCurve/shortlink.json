@@ -8,10 +8,10 @@
         },
         ".button": {
             "color": "#fff",
+            "background-color": "#000",
             "text-decoration": "none",
             "font-size": "45px",
-            "background-color": "black",
-            "border": "2px solid white",
+            "border": "2px solid #fff",
             "border-radius": "15px",
             "padding": "5px",
             "margin-top": "20px",
@@ -22,11 +22,13 @@
             "margin-bottom": "0px"
         },
         "#gh-desc": {
-            "color": "#fff"
+            "color": "#fff",
+            "font-size": "25px"
         }
     },
     "settings": {
         "background": "#2c466e",
-        "ghname": "UnderCurve"
+        "ghname": "UnderCurve",
+        "descbackup": "Solo dev from Midwestern, USA and owner of wdym.info domain."
     }
 }

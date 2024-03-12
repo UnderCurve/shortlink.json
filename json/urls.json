@@ -3,19 +3,24 @@
         "id": "home",
         "name": "Main Website",
         "url": "https://undercurve.wdym.info",
-        "icon": "fa-solid fa-home"
+        "icon": "fa-solid fa-home",
+        "btncolor": "#000",
+        "btnbg": "#0FF"
     },
     {
         "id": "yt",
         "name": "Main YouTube Channel",
         "url": "https://youtube.com/@UnderCurve",
-        "icon": "fa-brands fa-youtube"
+        "icon": "fa-brands fa-youtube",
+        "btnbg": "#F00"
+
     },
     {
         "id": "yt2",
         "name": "Second YouTube Channel",
         "url": "https://youtube.com/@UnderC2",
-        "icon": "fa-brands fa-youtube"
+        "icon": "fa-brands fa-youtube",
+        "btnbg": "#F00"
     },
     {
         "id": "gh",
@@ -27,36 +32,48 @@
         "id": "sc",
         "name": "My SoundCloud",
         "url": "https://soundcloud.com/UnderCurv3",
-        "icon": "fa-brands fa-soundcloud"
+        "icon": "fa-brands fa-soundcloud",
+        "btnbg": "#FF5500"
     },
     {
         "id": "ttv",
         "name": "My Twitch",
         "url": "https://twitch.tv/UnderCurveTV",
-        "icon": "fa-brands fa-twitch"
+        "icon": "fa-brands fa-twitch",
+        "btnbg": "#6441A5"
     },
     {
         "id": "disc",
         "name": "My Discord Account",
         "url": "https://discord.com/users/584349058236416024",
-        "icon": "fa-brands fa-discord"
+        "icon": "fa-brands fa-discord",
+        "btncolor": "",
+        "btnbg": "#454FBF"
     },
     {
         "id": "blog",
         "name": "My Blog",
         "url": "https://undercurve.wdym.info/blog",
-        "icon": "fa-solid fa-rss"
+        "icon": "fa-solid fa-rss",
+        "btnbg": "#EE802F"
     },
     {
         "id": "q",
         "name": "Quoted App",
         "url": "https://quoted.wdym.info",
-        "icon": "fa-solid fa-quote-left"
+        "icon": "fa-solid fa-quote-left",
+        "btncolor": "#000",
+        "btnbg": "#FFF"
     },
     {
         "id": "project",
         "name": "shortlink.json Project",
         "url": "https://github.com/UnderCurve/shortlink.json",
-        "icon": "fa-solid fa-folder"
+        "icon": "fa-solid fa-folder",
+        "gradient": {
+            "start": "#0E00FF",
+            "end": "#00F4FF",
+            "direction": "90deg"
+        }
     }
 ]

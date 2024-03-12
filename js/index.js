@@ -7,14 +7,29 @@ function createPage() {
                 // Create elements for the link
                 const link = document.createElement('a');
                 link.className = 'button';
-                link.href = url.url;
+                link.href = url.id;
 
+                // Apply gradient if defined
+                if (url.gradient && url.gradient.direction) {
+                    console.log(link.style.backgroundImage = createGradient(url.gradient))
+                    if (url.gradient.direction) {
+                        link.style.transform = `rotate(${url.gradient.direction})`;
+                    }
+                } else if (url.btnbg) {
+                    link.style.backgroundColor = url.btnbg;
+                }
+                if (url.btncolor) {
+                    link.style.color = url.btncolor
+                }
+
+                // Create icon element
                 const icon = document.createElement('i');
                 icon.className = url.icon;
 
+                // Create text node for button
                 const name = document.createTextNode(` ${url.name}`);
 
-                // Append icon and name to link
+                // Append icon and text to link
                 link.appendChild(icon);
                 link.appendChild(name);
 
@@ -32,6 +47,13 @@ function createPage() {
             console.error('Error fetching or parsing URLs:', error);
         });
 }
+
+// Function to create gradient style
+function createGradient(gradientData) {
+    const { direction, start, end } = gradientData;
+    return `linear-gradient(${direction}, ${start}, ${end})`;
+}
+
 function applySettings() {
     // Fetch and apply settings
     fetch('/json/settings.json')
@@ -46,9 +68,10 @@ function applySettings() {
             for (const prop in pfpStyles) {
                 pfp.style[prop] = pfpStyles[prop];
             }
-            // apply GitHub username
+
+            // Apply GitHub username
             pfp.src = `https://avatars.githubusercontent.com/${data.settings.ghname}`;
-            document.title = `${data.settings.ghname} - shortlink.json`
+            document.title = `${data.settings.ghname} - shortlink.json`;
 
             // Calculate font size based on screen width
             const screenWidth = window.innerWidth;
@@ -66,22 +89,31 @@ function applySettings() {
                 .then(response => response.json())
                 .then(ghdata => {
                     const ghDesc = document.getElementById('gh-desc');
-                    ghDesc.innerHTML = ghdata.bio;
+                    if (ghdata.message == "Not Found") {
+                        ghDesc.innerHTML = data.settings.descbackup
+                    } else {
+                        ghDesc.innerHTML = ghdata.bio;
+                    }
                     const DescStyles = data.styles['#gh-desc'];
                     for (const prop in DescStyles) {
                         ghDesc.style[prop] = DescStyles[prop];
                     }
+                    console.log(ghdata, DescStyles, data.settings['#gh-desc'])
                 })
-
+                .catch(error => {
+                    const ghDesc = document.getElementById('gh-desc');
+                    ghDesc.innerHTML = data.settings.descbackup
+                });
 
             // Apply button styles
             const buttons = document.getElementsByClassName('button');
             const buttonStyles = data.styles['.button'];
             Array.from(buttons).forEach(button => {
                 for (const prop in buttonStyles) {
-                    if (prop === 'font-size') {
-                        // Set font size based on screen width
-                        button.style[prop] = `${fontSize}px`;
+                    if (prop === "color" || prop === "background-color") {
+                        if (button.style[prop] === "") { // Check if button style is empty
+                            button.style[prop] = buttonStyles[prop]; // Apply color from settings.json
+                        }
                     } else {
                         button.style[prop] = buttonStyles[prop];
                     }
