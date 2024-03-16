@@ -93,10 +93,14 @@ function applySettings() {
             fetch(`https://api.github.com/users/${data.settings.ghname}`)
                 .then(response => response.json())
                 .then(ghdata => {
-                    if (ghdata.message == "Not Found") {
+                                        if (ghdata.message == "Not Found") {
                         ghDesc.innerHTML = data.settings.descbackup
                     } else {
                         ghDesc.innerHTML = ghdata.bio;
+                    }
+                    const DescStyles = data.styles['#gh-desc'];
+                    for (const prop in DescStyles) {
+                        ghDesc.style[prop] = DescStyles[prop];
                     }
                     console.log(ghdata, DescStyles, data.settings['#gh-desc'])
                 })
