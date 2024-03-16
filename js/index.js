@@ -85,23 +85,22 @@ function applySettings() {
             }
 
             // Get Github description and write it to gh-desc line
+            const ghDesc = document.getElementById('gh-desc');
+            const DescStyles = data.styles['#gh-desc'];
+            for (const prop in DescStyles) {
+                ghDesc.style[prop] = DescStyles[prop];
+            }
             fetch(`https://api.github.com/users/${data.settings.ghname}`)
                 .then(response => response.json())
                 .then(ghdata => {
-                    const ghDesc = document.getElementById('gh-desc');
                     if (ghdata.message == "Not Found") {
                         ghDesc.innerHTML = data.settings.descbackup
                     } else {
                         ghDesc.innerHTML = ghdata.bio;
                     }
-                    const DescStyles = data.styles['#gh-desc'];
-                    for (const prop in DescStyles) {
-                        ghDesc.style[prop] = DescStyles[prop];
-                    }
                     console.log(ghdata, DescStyles, data.settings['#gh-desc'])
                 })
                 .catch(error => {
-                    const ghDesc = document.getElementById('gh-desc');
                     ghDesc.innerHTML = data.settings.descbackup
                 });
 
