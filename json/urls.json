@@ -2,7 +2,7 @@
     {
         "id": "home",
         "name": "Main Website",
-        "url": "https://undercurve.wdym.info",
+        "url": "https://www.wdym.info",
         "icon": "fa-solid fa-home",
         "btncolor": "#000",
         "btnbg": "#0FF"
