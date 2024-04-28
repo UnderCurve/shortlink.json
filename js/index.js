@@ -11,7 +11,7 @@ function createPage() {
 
                 // Apply gradient if defined
                 if (url.gradient && url.gradient.direction) {
-                    console.log(link.style.backgroundImage = createGradient(url.gradient))
+                    //console.log(link.style.backgroundImage = createGradient(url.gradient))
                     if (url.gradient.direction) {
                         link.style.transform = `rotate(${url.gradient.direction})`;
                     }
@@ -72,18 +72,6 @@ function applySettings() {
             // Apply GitHub username
             pfp.src = `https://avatars.githubusercontent.com/${data.settings.ghname}`;
             document.title = `${data.settings.ghname} - shortlink.json`;
-
-            // Calculate font size based on screen width
-            const screenWidth = window.innerWidth;
-            let fontSize;
-            if (screenWidth < 700) {
-                // Set font size to 30px if screen width is less than 700px
-                fontSize = 20;
-            } else {
-                // Set font size to 45px otherwise
-                fontSize = 45;
-            }
-
             // Get Github description and write it to gh-desc line
             const ghDesc = document.getElementById('gh-desc');
             const DescStyles = data.styles['#gh-desc'];
@@ -102,7 +90,7 @@ function applySettings() {
                     for (const prop in DescStyles) {
                         ghDesc.style[prop] = DescStyles[prop];
                     }
-                    console.log(ghdata, DescStyles, data.settings['#gh-desc'])
+                    //console.log(ghdata, DescStyles, data.settings['#gh-desc'])
                 })
                 .catch(error => {
                     ghDesc.innerHTML = data.settings.descbackup

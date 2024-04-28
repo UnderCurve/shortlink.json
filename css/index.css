@@ -6,3 +6,13 @@ body {
 ::-webkit-scrollbar {
     display: none;
 }
+
+.button {
+    font-size: 45px;
+}
+
+@media screen and (max-width: 600px) {
+    .button {
+        font-size: 25px;
+    }
+}
