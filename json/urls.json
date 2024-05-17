@@ -51,13 +51,6 @@
         "btnbg": "#454FBF"
     },
     {
-        "id": "blog",
-        "name": "My Blog",
-        "url": "https://undercurve.wdym.info/blog",
-        "icon": "fa-solid fa-rss",
-        "btnbg": "#EE802F"
-    },
-    {
         "id": "q",
         "name": "Quoted App",
         "url": "https://quoted.wdym.info",

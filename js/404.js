@@ -1,4 +1,4 @@
-fetch('json/urls.json')
+fetch('/json/urls.json')
     .then((response) => response.json())
     .then((json) => {
         // Get the path from the URL (excluding the initial '/')
@@ -10,9 +10,9 @@ fetch('json/urls.json')
         // If the object is found, retrieve its URL and redirect
         if (targetObject) {
             const url = targetObject.url;
-            window.location.href = url; // Redirect to the found URL
+            window.location.replace = url; // Redirect to the found URL
         } else {
-            window.location.href = "/"
+            window.location.replace = "/"
         }
     })
     .catch((error) => {
