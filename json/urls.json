@@ -51,6 +51,13 @@
         "btnbg": "#454FBF"
     },
     {
+        "id": "itch",
+        "name": "My Itch.io",
+        "url": "https://undercurve.itch.io",
+        "icon": "fa-brands fa-itch-io",
+        "btnbg": "#fa5d5d"
+    },
+    {
         "id": "q",
         "name": "Quoted App",
         "url": "https://quoted.wdym.info",
